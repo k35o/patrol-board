@@ -2,6 +2,7 @@
   "name": "patrol-board",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "packageManager": "pnpm@10.30.3",
   "description": "A GitHub Action that periodically runs scripts and displays/updates the results as a dashboard in GitHub Issues",
   "scripts": {
