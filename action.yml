@@ -1,0 +1,16 @@
+name: 'Patrol Board'
+description: '定期的にスクリプトを実行し、結果を GitHub Issue にダッシュボードとして表示・更新し続ける GitHub Action'
+inputs:
+  script:
+    description: '実行するスクリプトのパス（`.ts` / `.js` / `.sh`）'
+    required: true
+  issue-title:
+    description: 'Issue のタイトル'
+    required: true
+  issue-label:
+    description: 'Issue に付けるラベル'
+    required: false
+    default: ''
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
