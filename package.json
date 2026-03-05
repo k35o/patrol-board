@@ -1,6 +1,6 @@
 {
   "name": "patrol-board",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "packageManager": "pnpm@10.30.3",
@@ -8,14 +8,18 @@
   "scripts": {
     "build": "ncc build src/main.ts --license licenses.txt",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.0",
-    "@actions/exec": "^1.1.1"
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^6.0.0"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.5.2",
+    "@changesets/cli": "2.29.8",
     "@types/node": "^22.0.0",
     "@vercel/ncc": "^0.38.3",
     "typescript": "^5.7.0",

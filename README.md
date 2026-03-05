@@ -19,7 +19,7 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v4
-      - uses: k35o/patrol-board@main
+      - uses: k35o/patrol-board@v1
         with:
           script: './scripts/check.ts'
           issue-title: 'Daily Report'
