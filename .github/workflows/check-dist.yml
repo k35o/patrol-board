@@ -1,0 +1,34 @@
+name: Check dist
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-dist:
+    name: Check dist is up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup mise
+        uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2
+        with:
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Check for diff
+        run: |
+          if [ -n "$(git diff dist/)" ]; then
+            echo "::warning::dist/ is out of date. Please run 'pnpm build' and commit the result."
+            git diff dist/
+          else
+            echo "dist/ is up to date."
+          fi
