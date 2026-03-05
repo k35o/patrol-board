@@ -10,7 +10,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "changeset": "changeset",
-    "version-packages": "changeset version"
+    "version-packages": "changeset version && pnpm build"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
